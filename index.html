@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Carmen Empowers - Life Coaching & Personal Development</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --light-gold: #F1E5AC;
+            --orange: #FF8C42;
+            --light-orange: #FFE3C9;
+            --green: #2E8B57;
+            --light-green: #D1E7DD;
+            --dark: #333333;
+            --light: #f9f9f9;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--light);
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-left: 10px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: var(--light-gold);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--green);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #26734a;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-gold {
+            background: var(--gold);
+        }
+        
+        .btn-gold:hover {
+            background: #c19b2e;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-content {
+            flex: 1;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--green);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--gold);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+            background: var(--light-green);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            color: var(--green);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 0;
+            background: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background: var(--light-orange);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: """;
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            color: var(--gold);
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            opacity: 0.2;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+        
+        /* Booking Section */
+        .booking {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--light-gold) 0%, var(--light-orange) 100%);
+            text-align: center;
+        }
+        
+        .booking-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .step {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        
+        .step-icon {
+            font-size: 2.5rem;
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .footer-social a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            color: var(--gold);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            nav li {
+                margin: 0 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-container {
+                flex-direction: column;
+            }
+            
+            .booking-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTI1IDVDMjcuMDYxNSAxMC4wMzkxIDI5LjY1MzMgMTQuODQxOCAzMi43MTQzIDE5LjI4NTdDMzUuMjc2OCAyMi45OTIgMzguMjc2OCAyNi4zMzc0IDQxLjY1NzEgMjkuMTY0M0M0Mi43MDI0IDMwLjA1MjcgNDIuNzAyNCAzMS45NDczIDQxLjY1NzEgMzIuODM1N0MzOC4yNzY4IDM1LjY2MjYgMzUuMjc2OCAzOS4wMDggMzIuNzE0MyA0Mi43MTQzQzI5LjY1MzMgNDcuMTU4MiAyNy4wNjE1IDUxLjk2MDkgMjUgNTdDMjIuOTM4NSA1MS45NjA5IDIwLjM0NjcgNDcuMTU4MiAxNy4yODU3IDQyLjcxNDNDMTQuNzIzMiAzOS4wMDggMTEuNzIzMiAzNS42NjI2IDguMzQyODkgMzIuODM1N0M3LjI5NzYxIDMxLjk0NzMgNy4yOTc2MSAzMC4wNTI3IDguMzQyODkgMjkuMTY0M0MxMS43MjMyIDI2LjMzNzQgMTQuNzIzMiAyMi45OTIgMTcuMjg1NyAxOS4yODU3QzIwLjM0NjcgMTQuODQxOCAyMi45Mzg1IDEwLjAzOTEgMjUgNVoiIGZpbGw9IiNEREFGMzciLz4KPHBhdGggZD0iTTE4IDMxQzE4IDMxIDE5LjUgMjYgMjUgMjZDMzAuNSAyNiAzMiAzMSAzMiAzMUMzMiAzMSAzMC41IDM2IDI1IDM2QzE5LjUgMzYgMTggMzEgMTggMzFaIiBmaWxsPSIjRkY4QzQyIi8+Cjwvc3ZnPgo=" alt="Dr. Carmen Logo">
+                <div class="logo-text">Dr. Carmen Empowers</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#booking" class="btn btn-gold">Book a Session</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Empower Your Life, Reclaim Your Joy</h1>
+            <p>With Dr. Carmen's personalized coaching approach, discover your inner strength and create the life you've always dreamed of.</p>
+            <a href="#booking" class="btn">Start Your Journey Today</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Dr. Carmen</h2>
+            </div>
+            <div class="about-container">
+                <div class="about-img">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDYwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjRjlGOUY5Ii8+CjxjaXJjbGUgY3g9IjMwMCIgY3k9IjE4MCIgcj0iODAiIGZpbGw9IiNGRDhBOUEiLz4KPHJlY3QgeD0iMjQwIiB5PSIyNjAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTQwIiBmaWxsPSIjMkU4QjU3Ii8+CjxwYXRoIGQ9Ik0yNDAgMjYwTDMwMCAzMjBMMzYwIDI2MCIgZmlsbD0iI0RBN0E1QyIvPgo8L3N2Zz4K" alt="Dr. Carmen">
+                </div>
+                <div class="about-content">
+                    <h2>My Mission & Philosophy</h2>
+                    <p>With over 15 years of experience in personal development and coaching, I'm dedicated to helping individuals unlock their full potential and live their best lives.</p>
+                    <p>My approach combines evidence-based techniques with intuitive guidance, creating a transformative experience that empowers you to break through limitations and achieve lasting change.</p>
+                    <p>I believe that everyone has the innate capacity for growth, healing, and joy. My role is to provide the tools, support, and accountability you need on your journey to self-discovery and empowerment.</p>
+                    <a href="#services" class="btn">Explore My Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDYwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjlGOUY5Ii8+CjxjaXJjbGUgY3g9IjE1MCIgY3k9IjE1MCIgcj0iNjAiIGZpbGw9IiNEREFGMzciLz4KPHJlY3QgeD0iMjUwIiB5PSIxMDAiIHdpZHRoPSIzMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjMkU4QjU3Ii8+CjxyZWN0IHg9IjI1MCIgeT0iMjEwIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwIiBmaWxsPSIjRkY4QzQyIi8+Cjwvc3ZnPgo=" alt="1-on-1 Coaching">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>1-on-1 Coaching</h3>
+                        <p>Personalized sessions tailored to your specific goals and challenges. Experience transformative growth with my dedicated support.</p>
+                        <a href="#booking" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDYwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjlGOUY5Ii8+CjxjaXJjbGUgY3g9IjE1MCIgY3k9IjEwMCIgcj0iNDAiIGZpbGw9IiNEREFGMzciLz4KPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTgwIiByPSI0MCIgZmlsbD0iI0ZGOEM0MiIvPgo8Y2lyY2xlIGN4PSIzMDAiIGN5PSIxMjAiIHI9IjQwIiBmaWxsPSIjMkU4QjU3Ii8+CjxyZWN0IHg9IjM3MCIgeT0iMTgwIiB3aWR0aD0iMTYwIiBoZWlnaHQ9IjYwIiBmaWxsPSIjMkU4QjU3Ii8+Cjwvc3ZnPgo=" alt="Group Workshops">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Group Workshops</h3>
+                        <p>Join like-minded individuals in transformative workshops designed to foster community and collective growth.</p>
+                        <a href="#booking" class="btn">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDYwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI2MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjlGOUY5Ii8+CjxyZWN0IHg9IjE1MCIgeT0iNTAiIHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiByeD0iMjAiIGZpbGw9IiNEREFGMzciLz4KPHBhdGggZD0iTTE1MCA1MEg0NTBWMTUwSDE1MFY1MFoiIGZpbGw9IiNGRjhDNDIiLz4KPGNpcmNsZSBjeD0iMzAwIiBjeT0iMjQwIiByPSI0MCIgZmlsbD0iIzJFOEI1NyIvPgo8L3N2Zz4K" alt="Corporate Speaking">
+                    </div>
+                    <div class="service-content">
+                        <div class="service-icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                        <h3>Corporate Speaking</h3>
+                        <p>Inspire your team with engaging talks on personal development, leadership, and creating a positive work culture.</p>
+                        <a href="#booking" class="btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Client Testimonials</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>Working with Dr. Carmen transformed my life. Her guidance helped me overcome self-doubt and build a business I love.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjUiIGN5PSIyNSIgcj0iMjUiIGZpbGw9IiNFREVEQ0QiLz4KPGNpcmNsZSBjeD0iMjUiIGN5PSIyMCIgcj0iNSIgZmlsbD0iIzc4Nzg3OCIvPgo8cGF0aCBkPSJNMTUgNDBDMTUgMzUgMjAgMzAgMjUgMzBDMzAgMzAgMzUgMzUgMzUgNDAiIGZpbGw9IiM3ODc4NzgiLz4KPC9zdmc+Cg==" alt="Sarah M.">
+                        <div>
+                            <h4>Sarah M.</h4>
+                            <p>Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>Dr. Carmen's workshops are incredible. I've found a supportive community and tools that have changed how I approach life's challenges.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjUiIGN5PSIyNSIgcj0iMjUiIGZpbGw9IiNFREVEQ0QiLz4KPGNpcmNsZSBjeD0iMjUiIGN5PSIyMCIgcj0iNSIgZmlsbD0iIzc4Nzg3OCIvPgo8cGF0aCBkPSJNMTUgNDBDMTUgMzUgMjAgMzAgMjUgMzBDMzAgMzAgMzUgMzUgMzUgNDAiIGZpbGw9IiM3ODc4NzgiLz4KPC9zdmc+Cg==" alt="Michael T.">
+                        <div>
+                            <h4>Michael T.</h4>
+                            <p>Marketing Director</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>After just three months of coaching, I've landed my dream job and improved my relationships. Dr. Carmen's approach really works!</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIHZpZXdCb3g9IjAgMCA1MCA1MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjUiIGN5PSIyNSIgcj0iMjUiIGZpbGw9IiNFREVEQ0QiLz4KPGNpcmNsZSBjeD0iMjUiIGN5PSIyMCIgcj0iNSIgZmlsbD0iIzc4Nzg3OCIvPgo8cGF0aCBkPSJNMTUgNDBDMTUgMzUgMjAgMzAgMjUgMzBDMzAgMzAgMzUgMzUgMzUgNDAiIGZpbGw9IiM3ODc4NzgiLz4KPC9zdmc+Cg==" alt="Jessica L.">
+                        <div>
+                            <h4>Jessica L.</h4>
+                            <p>Teacher</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ready to Transform Your Life?</h2>
+                <p>Book your session with Dr. Carmen today</p>
+            </div>
+            <div class="booking-steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>1. Choose a Time</h3>
+                    <p>Select from available slots that work with your schedule.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>2. Secure Your Session</h3>
+                    <p>Confirm your appointment with a simple payment process.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>3. Connect Online</h3>
+                    <p>Meet with Dr. Carmen via secure video conference.</p>
+                </div>
+            </div>
+            <a href="#" class="btn">Book Your Consultation Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">Dr. Carmen Empowers</div>
+                    <p>Helping you unlock your potential and create a life filled with purpose, joy, and fulfillment.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#booking">Book a Session</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <p>Email: info@drcarmenempowers.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Dr. Carmen Empowers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
